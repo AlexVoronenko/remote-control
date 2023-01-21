@@ -33,8 +33,8 @@ export async function mouseAction({
       cmd = `${cmd} ${x},${y}`;
     } else {
       const [x] = params;
-      const cb = mouseActivities[subcommand];
-      await cb(Number(x));
+      const callAction = mouseActivities[subcommand];
+      await callAction(Number(x));
     }
 
     return cmd;
